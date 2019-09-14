@@ -1,0 +1,12 @@
+<h3><%= @user.name %></h3>
+
+<div><%= @user.name %>のタスク一覧</div>
+
+<ul>
+    <% current_user.tasks.each do |task| %>
+    <li><%= link_to task.id,task %>：<%= task.content %> &gt; <%= task.status %></li>
+    <% end %>
+</ul>
+
+<%= link_to '新規タスクの作成', new_task_path %>
+<%= link_to 'Logout', logout_path, method: :delete %>
