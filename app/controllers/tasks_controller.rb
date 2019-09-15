@@ -4,7 +4,7 @@ class TasksController < ApplicationController
   before_action :correct_user, only: [:show, :destroy, :edit]
 
   def index
-    @tasks = Task.all
+    @user = current_user
   end
 
   def show
